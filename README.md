@@ -16,13 +16,13 @@ https://github.com/KhronosGroup/glTF/pull/1738
 
 **NOTE**
 
-When disabling path-tracing, the three.js native rasterizer is used as fallback. This renderer just supports the standard glTF 2.0 material model, the extensions mentioned above will are ignored.
+When disabling path-tracing, the three.js native rasterizer is used as fallback. This renderer just supports the standard glTF 2.0 material model, the extensions mentioned above will be ignored.
 
 Please have a look at [this overview](https://k0mplex.uber.space/reports/threejs/) for comparison renderings between the two renderers for several material configurations.
 
 
 ## Enterprise PBR - Sample Implementation
-This renderer should serve as a sample implementation for Dassault Systèmes Enterprise PBR material model. Please have a look at 
+This renderer should serve as a sample implementation for Dassault SystÃ¨mes Enterprise PBR material model. Please have a look at 
 [dspbr.glsl](./lib/shader/dspbr.glsl) for the full material implementation.
 
 ## Setup
@@ -68,7 +68,7 @@ For now, this writes the output image to ./output.png
 npm run render -- -- assets/scenes/DamagedHelmet/DamagedHelmet.gltf --ibl assets/env/analytical_chromatic.hdr --res 1024 1024 --samples 64
 ```
 
-## Using the Library 
+## Using the Renderer 
 
 The renderer can be easily used as stand-alone component.
 Please note that you need to have three.js setup as dependency in your scene. 
