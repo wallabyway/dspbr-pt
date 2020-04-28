@@ -2,6 +2,8 @@
 
 A WebGL2 based [glTF](https://www.khronos.org/gltf/) path-tracer which implements the [Enterprise PBR](https://github.com/DassaultSystemes-Technology/EnterprisePBRShadingModel) material model.
 
+[Demo](https://dassaultsystemes-technology.github.io/dspbr-pt/)
+
 ## Quickstart
 
 ```bash
