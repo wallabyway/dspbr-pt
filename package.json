@@ -10,25 +10,25 @@
     "dat.gui": "^0.7.7",
     "three": "^0.115.0",
     "open": "^7.0.3",
-    "electron-serve": "^1.0.0"
+    "shx": "^0.3.2",
+    "parcel": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.3.1"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
+    "electron-serve": "^1.0.0",
     "cssnano": "^4.1.10",
     "electron": "^8.2.3",
-    "electron-packager": "^14.2.1",
-    "parcel": "^1.12.4",
-    "parcel-plugin-static-files-copy": "^2.3.1",
-    "shx": "^0.3.2"
+    "electron-packager": "^14.2.1"
   },
   "scripts": {
     "start": "electron .",
     "render": "electron src/electron/offscreen.js --enable-logging",
     "clean": "shx rm -rf dist/*",
-    "build": "npm run clean && parcel build src/index.html --public-url ./ && parcel build src/electron/headless.html --public-url ./",
-    "build-viewer": "npm run clean && parcel build src/index.html --public-url ./",
-    "build-headless": "npm run clean && parcel build src/electron/headless.html --public-url ./",
+    "build": "npm run clean && parcel build src/index.html --public-url ./",
+    "build-all": "npm run clean && parcel build src/index.html --public-url ./ && parcel build src/electron/headless.html --public-url ./",
     "dev": "parcel src/index.html --port 3000 --open",
+    "build-headless": "npm run clean && parcel build src/electron/headless.html --public-url ./",
     "dev:electron": "concurrently \"parcel watch src/index.html\" \"npm start\"",
     "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=package",
     "package:windows": "electron-packager . dspbr-viewer --overwrite --asar --platform=win32 --arch=ia32 --out=package --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Enterprise PBR Viewer\""

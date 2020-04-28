@@ -2,6 +2,17 @@
 
 A WebGL2 based [glTF](https://www.khronos.org/gltf/) path-tracer which implements the [Enterprise PBR](https://github.com/DassaultSystemes-Technology/EnterprisePBRShadingModel) material model.
 
+## Quickstart
+
+```bash
+# Installs all dependencies necessary to run and develop the renderer and viewer app  
+npm install --production
+
+# Launches the viewer in a browser with attached file watcher for auto refresh on file edits.
+npm run dev
+
+```
+
 The renderer fully supports the glTF 2.0 metallic/roughness model. The additional Enterprise PBR material features are supported as 
 additional material extensions as defined by following pull requests to the official glTF 2.0 spec.
 
@@ -22,62 +33,63 @@ Please have a look at [this overview](https://k0mplex.uber.space/reports/threejs
 
 
 ## Enterprise PBR - Sample Implementation
-This renderer should serve as a sample implementation for Dassault Systèmes Enterprise PBR material model. Please have a look at 
+This renderer serves as a sample implementation for Dassault Systèmes Enterprise PBR material model. Please have a look at 
 [dspbr.glsl](./lib/shader/dspbr.glsl) for the full material implementation.
 
-## Setup
 
-```
-npm install 
+## Building
+
+```bash
+# Builds a distributable package of the viewer to ./dist
 npm run build
-```
-
-## Run
-
-```
-npm run dev
-```
-
-Launches the viewer in a browser with attached file watcher for auto refresh on file edits.
-
-### Electron
-
-Alternatively, use electron
-
-```
-npm start
-```
-
-or with file watcher for development
-
-```
-npm run dev:electron
 ```
 
 ## CLI Renderer
 
+Command-line rendering is support via headless electron
+
+To install all required extension please run install without the `--production` flag 
+
+
+```bash
+# Please note that this installs a full copy of electron with your node_modules (~+200MB)
+npm install 
+
+# Builds the cli renderer to ./dist
+npm run build-headless 
+
 ```
+
+
+```bash
+# Renders an image via command-line
 npm run render -- -- <scene_path> --ibl <hdr_path> --res <width> <height> --samples <num_samples>
 ```
 
 For now, this writes the output image to ./output.png
 
-### Example
+## Running/Developing in Electron 
 
-```
-npm run render -- -- assets/scenes/DamagedHelmet/DamagedHelmet.gltf --ibl assets/env/analytical_chromatic.hdr --res 1024 1024 --samples 64
+```bash
+# Runs the viewer in an electron instance
+npm start
 ```
 
-## Using the Renderer 
+
+```bash
+# Runs the viewer in an electron instance with attached code watcher for development
+npm run dev:electron
+```
+
+## Using the Render via Code
 
 The renderer can be easily used as stand-alone component.
 Please note that you need to have three.js setup as dependency in your scene. 
 
-```
+```bash
 npm install three 
 ```
 
-Using the renderer
 ```javascript
 
  import { PathtracingRenderer } from './lib/renderer.js';
@@ -92,7 +104,7 @@ Using the renderer
         });
 ```
 
-Where the interface of the render function is as
+Where the interface of the render function is defined as
 
 ```javascript
  function render(num_samples, frameFinishedCB, renderingFinishedCB)
