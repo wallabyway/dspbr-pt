@@ -1,7 +1,7 @@
 {
   "name": "gltf-pt",
   "version": "1.0.0",
-  "description": "",
+  "description": "A WebGL2 Enterprise PBR sample renderer",
   "main": "src/electron/main.js",
   "browser": "src/app.js",
   "dependencies": {
@@ -48,12 +48,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bsdorra/dspbr-pt.git"
+    "url": "https://github.com/DassaultSystemes-Technology/dspbr-pt"
   },
   "author": "Bastian Sdorra <bastian.SDORRA@3ds.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/bsdorra/dspbr-pt/issues"
+    "url": "https://github.com/DassaultSystemes-Technology/dspbr-pt/issues"
   },
-  "homepage": "https://github.com/bsdorra/dspbr-pt#readme"
+  "homepage": "https://github.com/DassaultSystemes-Technology/dspbr-pt#readme"
 }
